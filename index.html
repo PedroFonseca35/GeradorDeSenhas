@@ -13,16 +13,16 @@
     
     <div class="card-gerador">
         <h1>Gerador de senhas</h1>
-        <input type="text" id="" name="">
+        <input type="text" placeholder="Ex:W2q!sa00]" name="">
         <div>
             <input type="number" min="0" max="15" value="0" id="inputNumber">
             <input type="range" min="0" max="15" value="0" id="inputRange">
         </div>
-        <p><input type="checkbox"> Números</p>
-        <p><input type="checkbox"> Caracteres Especiais</p>
-        <p><input type="checkbox"> Letras Minúsculas</p>
-        <p><input type="checkbox"> Letras Maiúsculas</p>
-        <button type="button">Gerar</button>
+        <p><input type="checkbox" id="box1"> Números</p>
+        <p><input type="checkbox" id="box2"> Caracteres Especiais</p>
+        <p><input type="checkbox" id="box3"> Letras Minúsculas</p>
+        <p><input type="checkbox" id="box4"> Letras Maiúsculas</p>
+        <button type="button" onclick="gerarSenha()">Gerar</button>
     </div>
 
     <footer class=""></footer>
