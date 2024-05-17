@@ -11,26 +11,42 @@ inputNumero.addEventListener('input', function() {
 });
 
 function gerarSenha() {
+    let senhaPartes = '';
+    let numero = [];
+    let caracter = [];
+    let letrasMinusculas = [];
+    let letrasMaiusculas = [];
+
     var checkbox = document.getElementById('box1');
+    for (let i = 0; i <= 20; i++) {
     if (checkbox.checked) {
-        let numero = gerarNumeroInteiro(0, 9);
-        inputGeracao.value = numero;
+        numero = gerarNumeroInteiro(0, 9);
+        senhaPartes += numero;
     }
     var checkbox2 = document.getElementById('box2');
     if (checkbox2.checked) {
-        let caracter = caracterAleatorio();
-        inputGeracao.value = caracter; 
+        caracter = caracterAleatorio();
+        senhaPartes += caracter;
     }
     var checkbox3 = document.getElementById('box3');
     if (checkbox3.checked) {
-        let letrasMinusculas = minuscula();
-        inputGeracao.value = letrasMinusculas;
+        letrasMinusculas = minuscula();
+        senhaPartes += letrasMinusculas;
     }
     var checkbox4 = document.getElementById('box4');
     if (checkbox4.checked) {
-        let letrasMaiusculas = maiuscula();
-        inputGeracao.value = letrasMaiusculas;
+        letrasMaiusculas = maiuscula();
+        senhaPartes += letrasMaiusculas;
     }
+    }
+
+    let tamanho = parseInt(inputNumero.value);
+    let senha = [];
+    for (let i= 0; i < tamanho; i++) {
+	    senha.push(senhaPartes.charAt(gerarNumeroInteiro(0, senhaPartes.length -1)));
+    }
+    inputGeracao.value = senha.join('');
+
 }
 
 function gerarNumeroInteiro(min, max) {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body class="body">
@@ -13,16 +14,41 @@
     
     <div class="card-gerador">
         <h1>Gerador de senhas</h1>
-        <input type="text" placeholder="Ex:W2q!sa00]" name="" id="inputText">
-        <div>
+        <div class="input1">
+            <input placeholder="Ex:W2q!sa00]" class="input" name="text" type="text" id="inputText">  
+        </div>
+        <div class="cntr">
             <input type="number" min="0" max="15" value="0" id="inputNumber">
             <input type="range" min="0" max="15" value="0" id="inputRange">
         </div>
-        <p><input type="checkbox" id="box1"> Números</p>
-        <p><input type="checkbox" id="box2"> Caracteres Especiais</p>
-        <p><input type="checkbox" id="box3"> Letras Minúsculas</p>
-        <p><input type="checkbox" id="box4"> Letras Maiúsculas</p>
-        <button type="button" onclick="gerarSenha()" id="gerarSenhaBotao">Gerar</button>
+        <p>
+            <input id="box1" class="hidden-xs-up" type="checkbox">
+            <label for="box1" class="box1"></label>
+            <label for="box1" class="lbl">Números</label>
+        </p> 
+        
+        <p>
+            <input id="box2" class="hidden-xs-up" type="checkbox">
+            <label for="box2" class="box2"></label>
+            <label for="box2" class="lbl">Caracteres Especiais</label>
+        </p> 
+        
+        <p>
+            <input id="box3" class="hidden-xs-up" type="checkbox">
+            <label for="box3" class="box3"></label>
+            <label for="box3" class="lbl">Letras Minúsculas</label>
+        </p> 
+        
+        <p>
+            <input id="box4" class="hidden-xs-up" type="checkbox">
+            <label for="box4" class="box4"></label>
+            <label for="box4" class="lbl">Letras Maiúsculas</label>
+        </p>
+        <button type="button" class="botao-gerador" onclick="gerarSenha()">Gerar Senha</button>
+        <div class="cntr">
+            <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+            <label for="cbx" class="cbx"></label>
+        </div>
     </div>
 
     <footer class=""></footer>
@@ -30,3 +56,5 @@
 </body>
 
 </html>
+
+        
