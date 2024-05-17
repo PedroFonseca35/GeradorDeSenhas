@@ -8,17 +8,464 @@ body {
     padding: 0;
 }
 
-.card-gerador {
-    top: 70px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin-top: 1800px;
+/* Titulo Principal */
+h1{
+    font-family: "Roboto Mono", monospace;
     display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 35px;
+    color: #2600ff;
 }
+/* Titulo Principal */
+
+/* Input Number */
+
+#inputNumber{
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  outline: none;
+  border: 2px solid #2600ff;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 3em;
+  text-align: center;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 10px; /* Adicione margem à direita para separar os elementos */
+}
+
+ /* Input Number */
+ 
+ /* Input Ranger */
+#inputRange{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 10px;
+}
+ /* Input Ranger */
+
+
+/* Card Gerador */
+.card-gerador {
+  left: 0;
+  right: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  margin: 135px auto 0; 
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/* Card Gerador */
+
+/* Estilo do botão para gerar o codigo */
+.botao-gerador{
+  font-family: "Roboto Mono", monospace;
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #2600ff;
+  transition: all 0.2s ease;
+}
+
+.botao-gerador:active{
+    transform: scale(0.96);
+}
+
+.botao-gerador:before,
+.botao-gerador:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.botao-gerador:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #2600ff 20%, transparent 30%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #2600ff 15%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.botao-gerador:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #2600ff 15%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%),
+    radial-gradient(circle, #2600ff 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+ /* Estilo do botão para gerar o codigo */
+
+.input1 {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+  }
+  
+  .input1 input {
+    font-family: "Roboto Mono", monospace;
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #4c3ca8;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 10em;
+    bottom: 15em;
+  }
+  
+  .input1 label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(255, 255, 255);
+  }
+  
+  .input1 :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #212121;
+  }
+  
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: #2600ff;
+  }
+  
+
+  .password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .password input {
+    width: 30px;
+    height: 40px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #2600ff;
+    font-size: 20px;
+    color: white;
+    outline: none;
+  }
+
+   /* Estilo do botão para gerar o codigo */
+
+  /* CheckBoxs */
+
+  .box1{
+    position: relative;
+    top: 1px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: block;
+   }
+
+   .box2{
+    position: relative;
+    top: 1px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: block;
+   }
+
+   .box3{
+    position: relative;
+    top: 1px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: block;
+   }
+
+   .box4{
+    position: relative;
+    top: 1px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: block;
+   }
+
+   .box1:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 14px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+   }
+
+   .box2:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 14px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+   }
+
+   .box3:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 14px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+   }
+
+   .box4:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 14px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+   }
+   
+   
+   
+   .lbl {
+    font-family: "Roboto Mono", monospace;
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.box1, .box2, .box3, .box4 {
+    position: relative;
+    top: 1px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.box1:after, .box2:after, .box3:after, .box4:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 14px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+}
+
+/* Adicionado para exibir os textos ao lado das caixas de seleção */
+.box1 + .lbl, .box2 + .lbl, .box3 + .lbl, .box4 + .lbl {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* animação jelly */
+#box1:checked ~ .box1, #box2:checked ~ .box2, #box3:checked ~ .box3, #box4:checked ~ .box4 {
+    border-color: transparent;
+    background: #4632b5;
+    animation: jelly 0.6s ease;
+}
+
+#box1:checked ~ .box1:after, #box2:checked ~ .box2:after, #box3:checked ~ .box3:after, #box4:checked ~ .box4:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+}
+
+@keyframes jelly {
+    from {
+        transform: scale(1, 1);
+    }
+    
+    30% {
+        transform: scale(1.25, 0.75);
+    }
+    
+    40% {
+        transform: scale(0.75, 1.25);
+    }
+    
+    50% {
+        transform: scale(1.15, 0.85);
+    }
+    
+    65% {
+        transform: scale(0.95, 1.05);
+    }
+    
+    75% {
+        transform: scale(1.05, 0.95);
+    }
+    
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.hidden-xs-up {
+    display: none!important;
+}
+/* animação jelly */
+ /* CheckBoxs */
+
+/* Input Range */
+#inputRange {
+  -webkit-appearance: none;
+  width: 35%;
+  height: 10px;
+  
+  display: inline-block;
+  vertical-align: middle; /* Alinhe verticalmente com o inputNumber */
+  margin-top: -5px; /* Ajuste a posição vertical para cima */
+}
+
+#inputRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #3a2fa0; /* Cor do botão */
+  border-radius: 50%;
+  border: 2px solid #ffffff; /* Cor da borda */
+  margin-top: -5px; /* Para centralizar verticalmente */
+}
+
+#inputRange::-webkit-slider-thumb:hover {
+  background: #1527ca; /* Mudança de cor ao passar o mouse */
+}
+
+#inputRange::-webkit-slider-thumb:active {
+  background: #1527ca; /* Mudança de cor ao clicar */
+}
+
+#inputRange::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: rgb(55, 55, 184);
+}
+/* Input Range */

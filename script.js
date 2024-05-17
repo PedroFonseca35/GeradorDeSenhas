@@ -11,26 +11,36 @@ inputNumero.addEventListener('input', function() {
 });
 
 function gerarSenha() {
+    let senhaPartes = '';
     var checkbox = document.getElementById('box1');
+    
     if (checkbox.checked) {
         let numero = gerarNumeroInteiro(0, 9);
-        inputGeracao.value = numero;
+        senhaPartes += numero;
     }
     var checkbox2 = document.getElementById('box2');
     if (checkbox2.checked) {
         let caracter = caracterAleatorio();
-        inputGeracao.value = caracter; 
+        senhaPartes += caracter;
     }
     var checkbox3 = document.getElementById('box3');
     if (checkbox3.checked) {
         let letrasMinusculas = minuscula();
-        inputGeracao.value = letrasMinusculas;
+        senhaPartes += letrasMinusculas;
     }
     var checkbox4 = document.getElementById('box4');
     if (checkbox4.checked) {
         let letrasMaiusculas = maiuscula();
-        inputGeracao.value = letrasMaiusculas;
+        senhaPartes += letrasMaiusculas;
     }
+
+    let tamanho = parseInt(inputNumero.value);
+    let senha = [];
+    for (let i= 0; i < tamanho; i++) {
+	    senha.push(senhaPartes.charAt(gerarNumeroInteiro(0, senhaPartes.length -1)));
+    }
+    inputGeracao.value = senha.join('');
+
 }
 
 function gerarNumeroInteiro(min, max) {
